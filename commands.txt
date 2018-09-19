@@ -1,0 +1,17 @@
+[First Create Project] ***Do not run this command if you clone source
+docker-compose run web rails new . --force --database=mysql
+
+========= Docker initial =========
+run command: docker-compose build
+docker-compose up --build web
+wait to finish then run: docker-compose up --build web -d
+
+========= Docker commands =========
+[create db]
+docker-compose run web rake db:create RAILS_ENV=development
+
+[migrates] ***Not avaiable now
+docker-compose run web rake db:migrate RAILS_ENV=development
+
+[init project] ***Not avaiable now
+docker-compose run web rake initial:set_up
